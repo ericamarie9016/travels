@@ -1,11 +1,7 @@
 ---
 title: "Erica's Travel Page"
 image: images/CACoast2023.jpg
-page-layout: full
-about:
-  template: jolla
-  image-shape: round
-  image-width: 15em
+page-layout: custom
 ---
 
 <h3>**Hello world!**</h3>
@@ -18,13 +14,22 @@ Welcome to my world!
 
 This website will explore my adventures around the world!
 
-I will be using leaflet to create an interactive map of my travels
+I will be using leaflet to create an interactive map of my travels! To begin, this map explores the locations I have lived.
 
 https://quarto.org/docs/interactive/widgets/htmlwidgets.html
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
+library(tidyverse)
 library(leaflet)
-leaflet() %>%
-  addTiles() %>%  # Add default OpenStreetMap map tiles
-  addMarkers(lng=-77.4169, lat=39.1459, popup="Hometown")
+df <- tribble(~long, ~lat, ~name,
+           -77.4169, 39.1459, "Hometown",
+           -71.3128, 41.4901, "1996-1997",
+           -76.6019, 39.4015, "2013-2016",
+           -120.2308, 37.8389, "2020",
+           -112.0740, 33.4484, "2021-2022",
+           -119.6982, 34.4308, "2022-2023")
+
+leaflet(df) |> 
+  addTiles() |>  # Add default OpenStreetMap map tiles
+  addMarkers(~long, ~lat, popup = ~name)
 ```

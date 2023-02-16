@@ -7,13 +7,6 @@
     "text": "This website will explore my adventures around the world!"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Erica’s Travel Page",
-    "section": "",
-    "text": "Hello world!\n\n\nWelcome to my world!\n\nThis website will explore my adventures around the world!\nI will be using leaflet to create an interactive map of my travels\nhttps://quarto.org/docs/interactive/widgets/htmlwidgets.html"
-  },
-  {
     "objectID": "posts/2022-10-24-first-post/index.html",
     "href": "posts/2022-10-24-first-post/index.html",
     "title": "Learning how to make a blog post",
