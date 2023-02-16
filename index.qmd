@@ -1,11 +1,30 @@
 ---
-title: "travels"
+title: "Erica's Travel Page"
+image: images/CACoast2023.jpg
+page-layout: full
+about:
+  template: jolla
+  image-shape: round
+  image-width: 15em
 ---
 
-This is a Quarto website.
+<h3>**Hello world!**</h3>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<h2 class="custom-subtitle">
 
-```{r}
-1 + 1
+Welcome to my world!
+
+</h2>
+
+This website will explore my adventures around the world!
+
+I will be using leaflet to create an interactive map of my travels
+
+https://quarto.org/docs/interactive/widgets/htmlwidgets.html
+
+```{r, echo=FALSE}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=-77.4169, lat=39.1459, popup="Hometown")
 ```

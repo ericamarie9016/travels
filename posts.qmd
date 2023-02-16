@@ -1,0 +1,8 @@
+---
+title: "My Posts"
+listing:
+  type: default
+  contents: posts
+  sort: "date desc"
+  categories: cloud
+---

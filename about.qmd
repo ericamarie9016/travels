@@ -1,9 +1,11 @@
 ---
-title: "About"
+title: "Erica's Travel Page"
+image: images/CACoast2023.jpt
+page-layout: article
+about:
+  template: jolla
+  image-shape: round
+  image-width: 15em
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+This website will explore my adventures around the world!

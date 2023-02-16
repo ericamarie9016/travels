@@ -1,0 +1,56 @@
+/*-- scss:defaults --*/
+
+
+// HowTo https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide
+
+// Sass shortcuts https://ucsb-meds.github.io/customizing-quarto-websites/#/use-sass-colors
+
+// Colors
+$light-purple: #c182e8;
+$gray-purple: #6b5a75;
+$light-green: #e9f2ea;
+$deep-green: #549668;
+
+// Base Document Colors
+$body-bg: #ffffff;
+$body-color: $deep-green; // page text color;
+$navbar-bg: $gray-purple;
+$link-color: $gray-purple;
+
+// Fonts
+// https://fonts.google.com/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+// update via _quarto.ym theme:
+
+
+
+/*-- scss:rules--*/
+
+// Heading text
+h1, h3 {
+  letter-spacing: 8px;
+  font-weight: 700;
+  color: $gray-purple;
+}
+
+// inspect webpage to discover class types
+// class selector overwrites any other 
+// start class selector with .name {}
+.custom-subtitle {
+  font-size: 22px;
+  font-style: italix;
+  
+}
+
+.bren-logo { // This code chunk has been deleted from the index
+  size: 22px
+  
+}
+
+a:hover {
+  font-weight: 800;
+  border-width: 2px !important;
+}
+
+// <p class="custom-subtitle"></p>
+// quarto syntax [text]{.class}

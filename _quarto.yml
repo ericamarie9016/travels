@@ -3,17 +3,20 @@ project:
   output-dir: docs
 
 website:
-  title: "travels"
+  title: "Travels"
   navbar:
+    background: primary
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: posts.qmd
+        text: Blog Posts
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      - mystyles.scss
+    mainfont: Lato
     toc: true
 
 editor: visual
