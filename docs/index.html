@@ -67,6 +67,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
 <script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<link href="site_libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet">
+<script src="site_libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
+<link href="site_libs/fontawesome-4.7.0/font-awesome.min.css" rel="stylesheet">
+<script src="site_libs/leaflet-terminator-0.1.0/L.Terminator.js"></script>
+<script src="site_libs/leaflet-terminator-0.1.0/Terminator-binding.js"></script>
+<link href="site_libs/leaflet-minimap-3.3.1/Control.MiniMap.min.css" rel="stylesheet">
+<script src="site_libs/leaflet-minimap-3.3.1/Control.MiniMap.min.js"></script>
+<script src="site_libs/leaflet-minimap-3.3.1/Minimap-binding.js"></script>
 
 
 </head>
@@ -102,10 +112,14 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -124,25 +138,25 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<h3>
+<h3 class="anchored">
 <strong>Hello world!</strong>
 </h3>
-<h2 class="custom-subtitle">
+<h2 class="custom-subtitle anchored">
 <p>Welcome to my world!</p>
 </h2>
-<p>This website will explore my adventures around the world!</p>
-<p>I will be using leaflet to create an interactive map of my travels! To begin, this map explores the locations I have lived.</p>
-<p>https://quarto.org/docs/interactive/widgets/htmlwidgets.html</p>
+<p>This website is a personal project to explore my adventures around the world!</p>
+<p>To begin, this map explores the locations I have lived in blue and the countries I have visited in purple. In my spare time I will add more details and blog posts to this map, and a filter to explore specific trips. For now, click each icon and it will display a link that goes to my empty blog page. Hover over the right corner to explore more viewing options!</p>
+<p>The day/night view will update with the current time!</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-7d8dc60af3ecf0a0a2e7" style="width:100%;height:464px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7d8dc60af3ecf0a0a2e7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[39.1459,41.4901,39.4015,37.8389,33.4484,34.4308],[-77.4169,-71.3128,-76.6019,-120.2308,-112.074,-119.6982],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Hometown","1996-1997","2013-2016","2020","2021-2022","2022-2023"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[33.4484,41.4901],"lng":[-120.2308,-71.3128]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8c4782545aa77e94421e" style="width:100%;height:464px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8c4782545aa77e94421e">{"x":{"options":{"minZoom":1,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addAwesomeMarkers","args":[[39.1459,41.4901,39.4015,37.8389,33.4484,34.4308,25.08588,-11.888,14.6014,9.3911,-30.7396,-19.1939,-17.9234,39.9189,21.2841],[-77.4169,-71.3128,-76.6019,-120.2308,-112.074,-119.6982,-77.3049,-71.4074,120.9759,-84.1383,23.4272,23.0581,25.8445,-102.5323,-102.2543],{"icon":["home","home","home","home","home","home","plane","plane","plane","plane","plane","plane","plane","plane","plane"],"markerColor":["blue","blue","blue","blue","blue","blue","purple","purple","purple","purple","purple","purple","purple","purple","purple"],"iconColor":"white","spin":false,"squareMarker":false,"iconRotate":0,"prefix":"fa"},null,["Home","Home","Home","Home","Home","Home","Vacation","Research Trip","Visiting Friends","Vacation","Africa 2017","Africa 2017","Africa 2017","Half-year Roadtrip","Visiting Friends"],{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b>Hometown<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Home 1996-1997<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Home 2013-2016<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Home 2020<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Home 2021-2022<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Home 2022-2023<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Bahamas<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Peru 2015<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Philippines 2015<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Costa Rica 2017<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>South Africa 2017<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Botswana 2017<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Zimbabwe/Zambia 2017<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Roadtrip around US 2019<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>","<b>Central Mexico 2021<\/b> <br><a href = \"https://ericamarie9016.github.io/travels/posts.html\"target=\"_blank\">Blog Post<\/a>"],null,null,null,["Hometown","Home 1996-1997","Home 2013-2016","Home 2020","Home 2021-2022","Home 2022-2023","Bahamas","Peru 2015","Philippines 2015","Costa Rica 2017","South Africa 2017","Botswana 2017","Zimbabwe/Zambia 2017","Roadtrip around US 2019","Central Mexico 2021"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[[],["Home","Home","Home","Home","Home","Home","Vacation","Research Trip","Visiting Friends","Vacation","Africa 2017","Africa 2017","Africa 2017","Half-year Roadtrip","Visiting Friends"],{"collapsed":true,"autoZIndex":true,"position":"topright"}]},{"method":"addTerminator","args":[2,null,null,null,{"interactive":false,"pointerEvents":"none","className":""}]},{"method":"addMiniMap","args":[null,"Esri.WorldImagery","bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]}],"limits":{"lat":[-30.7396,41.4901],"lng":[-120.2308,120.9759]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
 
 
-
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,0 +1,15 @@
+---
+title: "Placeholder"
+description: "Blogposts will be updated shortly"
+author:
+  - name: Erica
+    url: http://ericamarie9016.github.io/travels
+date: 2023-02-24
+categories: [travel post]
+citation: 
+  url: http://ericamarie9016.github.io/2023-02-24-first-post
+image: rapel_gc.jpg
+draft: FALSE
+---
+
+Blog posts of my travels will be updated shortly! I am focused on my education and beginning this new career in data science right now, so this page will slowly be created as a side project.
