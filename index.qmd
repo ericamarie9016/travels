@@ -6,17 +6,11 @@ page-layout: full
 
 <h3>**Hello world!**</h3>
 
-<h2 class="custom-subtitle">
+<h2>Welcome to my world!</h2>
 
-Welcome to my world!
+This website is a personal project to explore my adventures around the world! This is being actively worked on in my spare time while I am a Masters student.
 
-</h2>
-
-This website is a personal project to explore my adventures around the world!
-
-To begin, this map explores the locations I have lived in blue and the countries I have visited in purple. In my spare time I will add more details and blog posts to this map, and a filter to explore specific trips. For now, click each icon and it will display a link that goes to my empty blog page. Hover over the right corner to explore more viewing options!
-
-The day/night view will update with the current time!
+To begin, this map explores the locations I have lived in blue and the countries I have visited in purple. Ultimately I will add more details and blog posts to this map, and the filter will be used to combine specific trips (such as looking at all posts from my half year US road trip).
 
 ```{r, echo=FALSE, message=FALSE}
 library(tidyverse)
@@ -25,28 +19,31 @@ library(leaflet)
 # BASE DATAFRAME -----
 travel_list <- tribble(~long, ~lat, ~name, ~status, ~trip, ~link,
            -77.4169, 39.1459, "Hometown", "home", "Home", "https://ericamarie9016.github.io/travels/posts.html",
-           -71.3128, 41.4901, "Home 1996-1997", "home", "Home", "https://ericamarie9016.github.io/travels/posts.html",
-           -76.6019, 39.4015, "Home 2013-2016", "home", "Home", "https://ericamarie9016.github.io/travels/posts.html",
-           -120.2308, 37.8389, "Home 2020", "home", "Home", "https://ericamarie9016.github.io/travels/posts.html",
-           -112.0740, 33.4484, "Home 2021-2022", "home", "Home", "https://ericamarie9016.github.io/travels/posts.html",
-           -119.6982, 34.4308, "Home 2022-2023", "home", "Home", "https://ericamarie9016.github.io/travels/posts.html",
-           -77.3049, 25.08588, "Bahamas", "travel", "Vacation", "https://ericamarie9016.github.io/travels/posts.html",
-           -71.4074, -11.8880, "Peru 2015", "travel", "Research Trip", "https://ericamarie9016.github.io/travels/posts.html",
-           120.9759, 14.6014, "Philippines 2015", "travel", "Visiting Friends", "https://ericamarie9016.github.io/travels/posts.html",
-           -84.1383, 9.3911, "Costa Rica 2017", "travel", "Vacation", "https://ericamarie9016.github.io/travels/posts.html",
-           23.4272, -30.7396, "South Africa 2017", "travel", "Africa 2017", "https://ericamarie9016.github.io/travels/posts.html",
-           23.0581, -19.1939, "Botswana 2017", "travel", "Africa 2017", "https://ericamarie9016.github.io/travels/posts.html",
-           25.8445, -17.9234, "Zimbabwe/Zambia 2017", "travel", "Africa 2017", "https://ericamarie9016.github.io/travels/posts.html",
-           -102.5323, 39.9189, "Roadtrip around US 2019", "travel", "Half-year Roadtrip", "https://ericamarie9016.github.io/travels/posts.html",
-           -102.2543, 21.2841, "Central Mexico 2021", "travel", "Visiting Friends", "https://ericamarie9016.github.io/travels/posts.html"
+           -71.3128, 41.4901, "Home 1996-1997", "home", "Home", "construction",
+           -76.6019, 39.4015, "Home 2013-2016", "home", "Home", "construction",
+           -120.2308, 37.8389, "Home 2020", "home", "Home", "construction",
+           -112.0740, 33.4484, "Home 2021-2022", "home", "Home", "construction",
+           -119.6982, 34.4308, "Home 2022-2023", "home", "Home", "construction",
+           -77.3049, 25.08588, "Bahamas", "travel", "Vacation", "construction",
+           -71.4074, -11.8880, "Peru 2015", "travel", "Research Trip", "construction",
+           120.9759, 14.6014, "Philippines 2015", "travel", "Visiting Friends", "construction",
+           -84.1383, 9.3911, "Costa Rica 2017", "travel", "Vacation", "construction",
+           23.4272, -30.7396, "South Africa 2017", "travel", "Africa 2017", "construction",
+           23.0581, -19.1939, "Botswana 2017", "travel", "Africa 2017", "construction",
+           25.8445, -17.9234, "Zimbabwe/Zambia 2017", "travel", "Africa 2017", "construction",
+           -102.5323, 39.9189, "Roadtrip around US 2019", "travel", "Half-year Roadtrip", "construction",
+           -102.2543, 21.2841, "Central Mexico 2021", "travel", "Visiting Friends", "construction"
            )
 
 # TEXT FOR LEAFLET POPUP -----
 travel_list <- travel_list |> 
-  dplyr::mutate(label = paste0("<b>", htmltools::htmlEscape(travel_list$name), "</b> <br>",
-                              '<a href = "',
-                              travel_list$link, 
-                              '"target="_blank">Blog Post</a>'))
+  dplyr::mutate(label =               # Create new label column
+                  # Add an under construction label
+                if_else(link == "construction", "[Under Construction]",  
+                  # Add the hyperlink if provided
+                paste0("<b>", htmltools::htmlEscape(travel_list$name), 
+                       "</b> <br>", '<a href = "', travel_list$link,
+                       '"target="_blank">Blog Post</a>')))
 
 # SET CUSTOM ICON -----
 # https://rstudio.github.io/leaflet/markers.html
@@ -72,10 +69,10 @@ leaflet(data = travel_list, options = leafletOptions(minZoom = 1, maxZoom = NULL
     options = layersControlOptions(collapsed = TRUE),
     position = "topright"
   ) |> 
-  addTerminator() |>    # Displays current night/day
+#  addTerminator() |>    # Displays current night/day
   addMiniMap(
     tiles = providers$Esri.WorldImagery,
-    toggleDisplay = TRUE
+    toggleDisplay = FALSE
   )
 
 
